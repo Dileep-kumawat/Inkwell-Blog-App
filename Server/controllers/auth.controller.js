@@ -134,8 +134,36 @@ async function logoutController(req, res) {
     }
 }
 
+async function getMeController(req, res) {
+    try {
+        const userId = req.user.id;
+
+        const user = await userModel.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({
+                "msg": "user not found",
+                success: false
+            });
+        }
+
+        res.status(201).json({
+            "msg": "user retrived successful",
+            "success": true,
+            user
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            "msg": "Internal server error",
+            success: false
+        });
+    }
+}
+
 module.exports = {
     registerController,
     loginController,
-    logoutController
+    logoutController,
+    getMeController
 }
