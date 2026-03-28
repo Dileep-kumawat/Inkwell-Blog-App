@@ -16,7 +16,7 @@ authRouter.post("/register", registerValidator, validate, registerController);
 
 /**
  * @route POST /api/auth/login
- * @description 
+ * @description Authenticates a user using email and password. 
  * @body {email, password}
  * @access Public
  */
@@ -24,14 +24,15 @@ authRouter.post("/login", loginValidator, validate, loginController);
 
 /**
  * @route GET /api/auth/logout
- * @description 
+ * @description Logs out the currently authenticated user by clearing token/session/cookie.
  * @access Private
  */
 authRouter.get("/logout", isAuthenticated, logoutController);
 
 /**
  * @route GET /api/auth/get-me
- * @description 
+ * @description Retrieves the profile/details of the currently logged-in user 
+ *              based on the authentication token/session.
  * @access Private
  */
 authRouter.get("/get-me", isAuthenticated, getMeController);
