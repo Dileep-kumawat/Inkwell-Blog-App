@@ -6,7 +6,7 @@ A production-ready, full-stack blog platform built with MongoDB, Express, React,
 
 ## 🌐 Live Demo
 
- **Live App:** https://live-link.com
+ **Live App:** https://inkwell-blog-app.netlify.app/
 
 ---
 
