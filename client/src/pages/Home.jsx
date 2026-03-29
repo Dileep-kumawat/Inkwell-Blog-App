@@ -160,7 +160,7 @@ const Home = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {Array.from({ length: 9 }).map((_, i) => <BlogCardSkeleton key={i} />)}
             </div>
-          ) : blogs.length === 0 ? (
+          ) : blogs?.length === 0 ? (
             <div className="text-center py-24">
               <div className="text-5xl mb-4">📭</div>
               <h3 className="font-display text-xl font-semibold text-ink-800 mb-2">
