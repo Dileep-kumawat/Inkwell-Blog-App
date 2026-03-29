@@ -18,7 +18,7 @@ const blogSlice = createSlice({
             state.blogs.unshift(action.payload);
         },
 
-        updateBlog: (state, action) => {
+        updateBlogInState: (state, action) => {
             const updated = action.payload;
 
             const index = state.blogs.findIndex(
@@ -48,6 +48,6 @@ const blogSlice = createSlice({
     }
 });
 
-export const { setBlogs, addBlog, updateBlog, removeBlog, setLoading, setError } = blogSlice.actions;
+export const { setBlogs, addBlog, updateBlogInState, removeBlog, setLoading, setError } = blogSlice.actions;
 
 export default blogSlice.reducer;

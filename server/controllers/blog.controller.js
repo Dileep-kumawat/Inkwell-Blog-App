@@ -26,7 +26,7 @@ async function createBlogController(req, res) {
 
 async function getBlogsController(req, res) {
     try {
-        const blogs = await blogModel.find().populate();
+        const blogs = await blogModel.find().populate("author");
 
         return res.status(201).json({
             "msg": "blogs fetched successfully",
@@ -107,7 +107,7 @@ async function getMyBlogsController(req, res) {
     try {
         const blogs = await blogModel.find({
             author: req.user.id
-        }).populate();
+        }).populate("author");
 
         return res.status(201).json({
             "msg": "blogs fetched successfully",
